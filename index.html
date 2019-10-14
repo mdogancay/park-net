@@ -1,0 +1,65 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="developer" content="Murat Doğançay, butikotomasyon.com">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link crossorigin="anonymous" rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" />
+<link crossorigin="anonymous" rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" />
+<link crossorigin="anonymous" rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Material+Icons" />
+<link crossorigin="anonymous" rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/vuetify@2.1.3/dist/vuetify.min.css" />
+</head>
+<body>
+    <div id="app" style="margin:30px">
+      <v-app id="inspire">
+        <v-sheet height="500">
+          <v-calendar
+            type="month"
+            now="2014-09-25"
+            value="2014-09-25"
+            :events="cData"
+          ></v-calendar>
+        </v-sheet>
+      </v-app>
+    </div>
+<script crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/babel-polyfill/dist/polyfill.min.js"></script>
+<script crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+<script crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/vuetify@2.1.3/dist/vuetify.min.js"></script>
+<script>
+const opts = {
+  icons: {
+    iconfont: 'mdi'
+  },
+  lang: {
+    //locales: { tr },
+    current: 'tr'
+  },
+  theme: {
+    themes: {
+      light: {
+        primary: '#03a9f4',
+        secondary: '#9e9e9e',
+        accent: '#00bcd4',
+        error: '#f44336',
+        warning: '#ff5722',
+        info: '#009688',
+        success: '#4caf50'
+      }
+    }
+  }
+};
+
+new Vue({
+  el: '#app',
+  vuetify: new Vuetify(opts),
+  data: () => ({
+    cData: [{"name":"event 1", "start":"2014-09-25"},
+            {"name":"event 2", "start":"2014-09-26","end":"2014-09-29"},
+            {"name":"event 3", "start":"2014-09-27"},
+            {"name":"event 4", "start":"2014-09-30"}],
+  })
+})
+</script>
+</body>
+</html>
